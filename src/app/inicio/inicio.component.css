@@ -1,0 +1,10 @@
+.logoInicio {
+  opacity: 0.2;
+  min-width: 50%;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}

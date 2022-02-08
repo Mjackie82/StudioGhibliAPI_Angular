@@ -1,0 +1,35 @@
+<!-- É onde fica o input para fazer as buscas-->
+<div class="box-search">
+  <input id="bar-search" #ms type="text" placeholder="Pesquisar filme" />
+  <i id="btn-search" class="fas fa-search" (click)="pesquisar(ms.value)"></i>
+</div>
+
+<!-- É a parte onde aparece os filmes -->
+<div class="box-geral" *ngIf="listaFilmes.length > 0">
+  <div *ngFor="let lf of listaFilmes" class="box-filme">
+    <img class="img-capa" [src]="lf.image" alt="" />
+    <div class="btns">
+      <div title="info" class="maisInfo" (click)="showInfo(lf)">...</div>
+      <div title="add to list" class="addFilme" (click)="addLista(lf)">+</div>
+    </div>
+  </div>
+</div>
+
+<!-- Caso não tenha nenhum filme, aparece a mensagem nothing here -->
+<div class="notResul" *ngIf="listaFilmes.length == 0">
+  <h1>Nothing here</h1>
+</div>
+
+<!-- É a janela com as informações adicionais dos filmes -->
+<div *ngIf="showInfovar == true" class="boxInfoFilm">
+  <img class="filmBanner" [src]="infoBanner" alt="banner film" />
+  <div title="close" class="closeInfo" (click)="closeInfo()">X</div>
+  <div class="effectFade"></div>
+  <div class="infosFilm">
+    <h1>{{ infoTitle }}</h1>
+    <p><strong>description: </strong> {{ infoDesc }}</p>
+    <p><strong>Release date: </strong> {{ infoRelData }}</p>
+    <p><strong>Running time: </strong> {{ infoTempFilm }} minutes</p>
+    <p><strong>Rate score: </strong> {{ infoRate }}</p>
+  </div>
+</div>

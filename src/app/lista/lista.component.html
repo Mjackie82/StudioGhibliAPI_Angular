@@ -1,0 +1,30 @@
+
+<!-- É onde aparece todos os filmes que foram adicionados na lista-->
+<div class="box-geral">
+  <div *ngFor="let lf of filmes" class="box-filme">
+    <img class="img-capa" [src]="lf.image" alt="" />
+    <div class="btns">
+      <div title="Info" class="maisInfo" (click)="showInfo(lf)">...</div>
+      <div title="Remove" class="remover" (click)="removerLista(lf)">-</div>
+    </div>
+  </div>
+</div>
+
+<!-- Caso não tenah nenhum filme na lista aparece a mensagem nothing here-->
+<div *ngIf="filmes.length == 0" class="nothere">
+  <h1 class="textNH">Nothing here</h1>
+</div>
+
+<!-- É a janela com as informações adicionais dos filmes -->
+<div *ngIf="showInfovar == true" class="boxInfoFilm">
+  <img class="filmBanner" [src]="infoBanner" alt="banner film" />
+  <div title="close" class="closeInfo" (click)="closeInfo()">X</div>
+  <div class="effectFade"></div>
+  <div class="infosFilm">
+    <h1>{{ infoTitle }}</h1>
+    <p><strong>description: </strong> {{ infoDesc }}</p>
+    <p><strong>Release date: </strong> {{ infoRelData }}</p>
+    <p><strong>Running time: </strong> {{ infoTempFilm }} minutes</p>
+    <p><strong>Rate score: </strong> {{ infoRate }}</p>
+  </div>
+</div>

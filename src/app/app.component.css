@@ -1,0 +1,53 @@
+p {
+  font-family: Lato;
+}
+
+header {
+  display: block;
+  height: 100px;
+}
+
+.logo {
+  min-width: 80px;
+  min-height: 80px;
+  width: 80px;
+  height: 80px;
+}
+
+.menu {
+  position: fixed;
+  width: 100%;
+  background-color: #4689ee;
+  display: flex;
+  align-items: center;
+  border-bottom: solid 3px white;
+  z-index: 4;
+  justify-content: space-around;
+  min-width: 720px;
+}
+
+.menu-opc {
+  display: flex;
+  align-items: center;
+}
+
+.opc {
+  list-style: none;
+  background-color: #4689ee;
+  margin-left: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.opc:hover {
+  background-color: #4880d4;
+}
+
+.opc a {
+  width: 100px;
+  outline: none;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
